@@ -1,6 +1,7 @@
 package orthae.com.github.taskservice.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.UUID;
@@ -9,6 +10,7 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 public class Task {
     private UUID id;
     private User createdBy;

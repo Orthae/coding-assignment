@@ -18,26 +18,33 @@ class TaskRepositoryImpl implements TaskRepository {
 
     @Override
     public Optional<Task> findById(UUID id) {
-        return repository.findById(id);
+        return repository.findById(id)
+                .map(EntityMapper::toDomain);
     }
 
     @Override
     public List<Task> findAllByUserId(UUID userId) {
-        return repository.findAll;
+        return repository.findAllByUserId(userId)
+                .stream()
+                .map(EntityMapper::toDomain)
+                .toList();
     }
 
     @Override
     public List<Task> findAll() {
-        return List.of();
+        return repository.findAll()
+                .stream()
+                .map(EntityMapper::toDomain)
+                .toList();
     }
 
     @Override
     public void save(Task task) {
-
+        repository.save(EntityMapper.toEntity(task));
     }
 
     @Override
     public void deleteById(UUID id) {
-
+        repository.deleteById(id);
     }
 }
