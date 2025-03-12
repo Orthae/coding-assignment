@@ -1,4 +1,4 @@
-package orthae.com.github.userservice.web;
+package orthae.com.github.userservice.web.model;
 
 
 import jakarta.validation.constraints.NotBlank;

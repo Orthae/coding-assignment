@@ -24,7 +24,7 @@ public class ExceptionController {
         return new ResponseEntity<>(new ErrorResponse(errors), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ExceptionHandler(InvalidCredentials.class)
     public ResponseEntity<ErrorResponse> handle(InvalidCredentials exception) {
         List<ErrorMessage> errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
 
@@ -32,7 +32,7 @@ public class ExceptionController {
 
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ExceptionHandler(UserAlreadyExists.class)
     public ResponseEntity<ErrorResponse> handle(UserAlreadyExists exception) {
         List<ErrorMessage> errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
 

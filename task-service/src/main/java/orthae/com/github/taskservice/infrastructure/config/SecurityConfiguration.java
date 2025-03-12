@@ -1,4 +1,4 @@
-package orthae.com.github.taskservice.domain;
+package orthae.com.github.taskservice.infrastructure.config;
 
 import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
 import org.springframework.context.annotation.Bean;

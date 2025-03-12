@@ -4,6 +4,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 import orthae.com.github.userservice.domain.*;
+import orthae.com.github.userservice.web.model.LoginCommand;
+import orthae.com.github.userservice.web.model.SignupCommand;
 
 @Service
 public class UserService {
@@ -17,17 +19,22 @@ public class UserService {
         this.tokenFactory = tokenFactory;
     }
 
-    public void createUser(String username, String password, Role role) {
-        if(userRepository.existsByUsername(username)) {
+    public void createUser(SignupCommand command) {
+        if(userRepository.existsByUsername(command.username())) {
             throw new UserAlreadyExists();
         }
 
-        userRepository.save(User.of(username, passwordEncoder.encode(password), role));
+        var role = switch (command.role()) {
+            case ADMIN -> Role.ADMIN;
+            case USER -> Role.USER;
+        };
+
+        userRepository.save(User.of(command.username(), passwordEncoder.encode(command.password()), role));
     }
 
-    public Jwt createToken(String username, String password) {
-        var user = userRepository.findByUsername(username).orElseThrow(InvalidCredentials::new);
-        if(!passwordEncoder.matches(password, user.getPassword())) {
+    public Jwt createToken(LoginCommand command) {
+        var user = userRepository.findByUsername(command.username()).orElseThrow(InvalidCredentials::new);
+        if(!passwordEncoder.matches(command.password(), user.getPassword())) {
           throw new InvalidCredentials();
         }
 
