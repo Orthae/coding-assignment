@@ -1,8 +1,9 @@
-package orthae.com.github.userservice.infrastructure;
+package orthae.com.github.userservice.infrastructure.repository;
 
 import org.springframework.stereotype.Repository;
 import orthae.com.github.userservice.domain.User;
 import orthae.com.github.userservice.domain.UserRepository;
+import orthae.com.github.userservice.infrastructure.repository.entity.EntityMapper;
 
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package orthae.com.github.userservice.infrastructure;
+package orthae.com.github.userservice.infrastructure.repository.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

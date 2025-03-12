@@ -1,4 +1,4 @@
-package orthae.com.github.userservice.infrastructure;
+package orthae.com.github.userservice.infrastructure.config;
 
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;
@@ -16,11 +16,9 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
+import java.security.*;
 import java.security.interfaces.RSAPublicKey;
-import java.text.ParseException;
+import java.security.spec.InvalidKeySpecException;
 
 @Configuration
 public class SecurityConfiguration {
@@ -42,8 +40,8 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    public JwtEncoder jwtEncoder() throws ParseException, NoSuchAlgorithmException {
-        KeyPair keyPair = KeyPairGenerator.getInstance("RSA").generateKeyPair();
+    public JwtEncoder jwtEncoder(TokenProperties properties) throws NoSuchAlgorithmException, InvalidKeySpecException {
+        KeyPair keyPair = properties.getKeyPair();
         JWK jwk = new RSAKey.Builder((RSAPublicKey) keyPair.getPublic()).privateKey(keyPair.getPrivate()).build();
 
         return new NimbusJwtEncoder(new ImmutableJWKSet<>(new JWKSet(jwk)));

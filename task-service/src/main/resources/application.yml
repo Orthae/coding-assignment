@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: task-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public
+    username: postgres
+    password: root
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "https://orthae.s3.eu-central-003.backblazeb2.com/jwks.json"
+server:
+  port: 8081

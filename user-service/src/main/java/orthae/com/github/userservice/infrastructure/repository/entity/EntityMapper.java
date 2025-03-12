@@ -1,4 +1,4 @@
-package orthae.com.github.userservice.infrastructure;
+package orthae.com.github.userservice.infrastructure.repository.entity;
 
 import orthae.com.github.userservice.domain.Role;
 import orthae.com.github.userservice.domain.User;
