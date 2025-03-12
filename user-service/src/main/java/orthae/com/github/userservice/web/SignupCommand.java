@@ -1,5 +1,19 @@
 package orthae.com.github.userservice.web;
 
 
-public record SignupCommand(String username, String password, RoleDto role) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record SignupCommand(
+        @NotBlank
+        @NotNull
+        String username,
+
+        @NotBlank
+        @NotNull
+        String password,
+
+        @NotNull
+        RoleDto role
+) {
 }

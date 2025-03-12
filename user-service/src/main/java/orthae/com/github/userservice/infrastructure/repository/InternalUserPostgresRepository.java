@@ -8,4 +8,5 @@ import java.util.UUID;
 
 interface InternalUserPostgresRepository extends JpaRepository<UserEntity, UUID> {
     Optional<UserEntity> findByUsername(String username);
+    boolean existsByUsername(String username);
 }

@@ -23,6 +23,11 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public boolean existsByUsername(String username) {
+        return repository.existsByUsername(username);
+    }
+
+    @Override
     public void save(User user) {
         repository.save(EntityMapper.toEntity(user));
     }
