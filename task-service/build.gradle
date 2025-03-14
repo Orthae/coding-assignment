@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.run.BootRun
+
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.9'
@@ -46,4 +48,12 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+tasks.register('run') {
+	dependsOn('bootRun')
+}
+
+tasks.named('bootRun', BootRun) {
+	args('--spring.profiles.active=local')
 }

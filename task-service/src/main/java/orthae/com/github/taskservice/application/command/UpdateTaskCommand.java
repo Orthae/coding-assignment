@@ -20,7 +20,7 @@ public class UpdateTaskCommand {
     private final String description;
 
     @NotNull(message = "Status cannot be null")
-    @ValidEnum(enumClass = TaskStatusModel.class, message = "Status must use following values, \"PENDING\", \"COMPLETED\".")
+    @ValidEnum(enumClass = TaskStatusModel.class, message = "Status must use following values, 'PENDING', 'COMPLETED'.")
     private final String status;
 
     public TaskStatusModel getStatus() {

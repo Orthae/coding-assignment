@@ -11,7 +11,6 @@ import orthae.com.github.taskservice.application.AuthenticatedUser;
 import orthae.com.github.taskservice.application.command.CreateTaskCommand;
 import orthae.com.github.taskservice.application.command.UpdateTaskCommand;
 
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -33,12 +32,12 @@ public class TaskController {
     }
 
     @GetMapping(produces = MediaType.PUBLIC_JSON_V1)
-    public ResponseEntity<List<TaskModel>> getTasks(JwtAuthenticationToken token)  {
+    public ResponseEntity<CollectionResponse<TaskModel>> getTasks(JwtAuthenticationToken token)  {
         var user = AuthenticatedUser.from(token);
         var tasks = service.getTasks(user);
 
         return ResponseEntity.status(HttpStatus.OK)
-                .body(tasks);
+                .body(CollectionResponse.of(tasks));
     }
 
     @PutMapping(value = "{id}", produces = MediaType.PUBLIC_JSON_V1, consumes = MediaType.PUBLIC_JSON_V1)

@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: "${TASK_DB_URL}"
+    username: "${TASK_DB_USERNAME}"
+    password: "${TASK_DB_PASSWORD}"
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "https://orthae.s3.eu-central-003.backblazeb2.com/jwks.json"
