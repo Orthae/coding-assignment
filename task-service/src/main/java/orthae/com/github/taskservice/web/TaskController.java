@@ -1,19 +1,21 @@
 package orthae.com.github.taskservice.web;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
-import orthae.com.github.taskservice.application.TaskModel;
+import orthae.com.github.taskservice.application.model.TaskModel;
 import orthae.com.github.taskservice.application.TaskService;
-import orthae.com.github.taskservice.domain.AuthenticatedUser;
-import orthae.com.github.taskservice.domain.CreateTaskCommand;
-import orthae.com.github.taskservice.domain.UpdateTaskCommand;
+import orthae.com.github.taskservice.application.AuthenticatedUser;
+import orthae.com.github.taskservice.application.command.CreateTaskCommand;
+import orthae.com.github.taskservice.application.command.UpdateTaskCommand;
 
 import java.util.List;
 import java.util.UUID;
 
 @RestController
+@RequestMapping("tasks")
 public class TaskController {
     private final TaskService service;
 
@@ -21,8 +23,8 @@ public class TaskController {
         this.service = service;
     }
 
-    @PostMapping
-    public ResponseEntity<TaskModel> createTask(@RequestBody CreateTaskCommand command, JwtAuthenticationToken token)  {
+    @PostMapping(consumes = MediaType.PUBLIC_JSON_V1, produces = MediaType.PUBLIC_JSON_V1)
+    public ResponseEntity<TaskModel> createTask(@Valid @RequestBody CreateTaskCommand command, JwtAuthenticationToken token)  {
         var user = AuthenticatedUser.from(token);
         var task = service.createTask(command, user);
 
@@ -30,7 +32,7 @@ public class TaskController {
                 .body(task);
     }
 
-    @GetMapping
+    @GetMapping(produces = MediaType.PUBLIC_JSON_V1)
     public ResponseEntity<List<TaskModel>> getTasks(JwtAuthenticationToken token)  {
         var user = AuthenticatedUser.from(token);
         var tasks = service.getTasks(user);
@@ -39,8 +41,8 @@ public class TaskController {
                 .body(tasks);
     }
 
-    @PutMapping("{id}")
-    public ResponseEntity<TaskModel> updateTask(@PathVariable UUID id, @RequestBody UpdateTaskCommand command, JwtAuthenticationToken token)  {
+    @PutMapping(value = "{id}", produces = MediaType.PUBLIC_JSON_V1, consumes = MediaType.PUBLIC_JSON_V1)
+    public ResponseEntity<TaskModel> updateTask(@PathVariable UUID id, @Valid @RequestBody UpdateTaskCommand command, JwtAuthenticationToken token)  {
         var user = AuthenticatedUser.from(token);
         var task = service.updateTask(id, command, user);
 
@@ -48,7 +50,7 @@ public class TaskController {
                 .body(task);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping(value = "{id}", produces = MediaType.PUBLIC_JSON_V1)
     public ResponseEntity<TaskModel> deleteTask(@PathVariable UUID id, JwtAuthenticationToken token)  {
         var user = AuthenticatedUser.from(token);
         var task = service.deleteTask(id, user);

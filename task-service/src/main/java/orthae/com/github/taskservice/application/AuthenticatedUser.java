@@ -1,4 +1,4 @@
-package orthae.com.github.taskservice.domain;
+package orthae.com.github.taskservice.application;
 
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 

@@ -1,7 +1,5 @@
 package orthae.com.github.taskservice.application;
 
-import orthae.com.github.taskservice.domain.AuthenticatedUser;
-import orthae.com.github.taskservice.domain.Role;
 import orthae.com.github.taskservice.domain.Task;
 
 public class TaskAuthorizer {
@@ -14,6 +12,6 @@ public class TaskAuthorizer {
             return;
         }
 
-        throw new IllegalArgumentException("Task not found");
+        throw new ActionUnauthorized();
     }
 }

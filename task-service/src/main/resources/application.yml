@@ -10,5 +10,3 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: "https://orthae.s3.eu-central-003.backblazeb2.com/jwks.json"
-server:
-  port: 8081
