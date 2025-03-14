@@ -13,8 +13,3 @@ public record AuthenticatedUser(UUID id, String username, Role role) {
         );
     }
 }
-
-enum Role {
-    ADMIN,
-    USER
-}

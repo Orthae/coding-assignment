@@ -17,8 +17,7 @@ spec:
     spec:
       containers:
         - name: task-service
-          image: nginx
-          imagePullPolicy: IfNotPresent
+          image: orthae/task-service:latest
           ports:
             - containerPort: 80
               protocol: TCP

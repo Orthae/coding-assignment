@@ -1,20 +1,17 @@
 package orthae.com.github.taskservice.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.UUID;
 
-//title, description, status (PENDING, COMPLETED), createdBy (User)
-
 @AllArgsConstructor
-@NoArgsConstructor
-@Getter
+@Builder
+@Data
 public class Task {
-    private UUID id;
-    private User createdBy;
-    private String title;
-    private String description;
-    private TaskStatus status;
+    private final UUID id;
+    private final User createdBy;
+    private final String title;
+    private final String description;
+    private final TaskStatus status;
+    private final int version;
 }

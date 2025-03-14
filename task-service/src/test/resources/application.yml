@@ -1,0 +1,9 @@
+spring:
+  sql:
+    init:
+      mode: always
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "http://localhost:9080/jwks.json"

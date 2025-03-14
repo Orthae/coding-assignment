@@ -1,12 +1,11 @@
 package orthae.com.github.taskservice.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.UUID;
 
 @AllArgsConstructor
-@Getter
+@Data
 public class User {
-    private final UUID id;
+    private UUID id;
 }

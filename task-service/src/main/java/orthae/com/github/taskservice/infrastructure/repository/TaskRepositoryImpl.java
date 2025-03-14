@@ -1,4 +1,4 @@
-package orthae.com.github.taskservice.infrastructure;
+package orthae.com.github.taskservice.infrastructure.repository;
 
 import org.springframework.stereotype.Repository;
 import orthae.com.github.taskservice.domain.Task;

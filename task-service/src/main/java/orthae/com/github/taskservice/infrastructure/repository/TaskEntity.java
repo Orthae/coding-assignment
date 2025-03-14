@@ -1,15 +1,14 @@
-package orthae.com.github.taskservice.infrastructure;
+package orthae.com.github.taskservice.infrastructure.repository;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.UUID;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Data
 @Entity
 @Table(name = "tasks")
 public class TaskEntity {
@@ -29,4 +28,8 @@ public class TaskEntity {
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private TaskStatusEntity status;
+
+    @Column(name = "version")
+    @Version
+    private int version;
 }

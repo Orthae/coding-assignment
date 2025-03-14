@@ -1,3 +1,20 @@
 spring:
   application:
     name: user-service
+
+logbook:
+  format:
+    style: http
+  obfuscate:
+    headers:
+      - Authorization
+    json-body-fields:
+      - password
+      - accessToken
+    replacement: <omitted>
+
+logging:
+  level:
+    org:
+      zalando:
+        logbook: TRACE

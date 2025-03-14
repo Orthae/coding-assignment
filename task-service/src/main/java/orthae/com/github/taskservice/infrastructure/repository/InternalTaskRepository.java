@@ -1,7 +1,6 @@
-package orthae.com.github.taskservice.infrastructure;
+package orthae.com.github.taskservice.infrastructure.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import orthae.com.github.taskservice.domain.Task;
 
 import java.util.List;
 import java.util.UUID;
