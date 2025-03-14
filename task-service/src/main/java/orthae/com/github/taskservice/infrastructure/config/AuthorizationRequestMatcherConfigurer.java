@@ -6,7 +6,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AuthorizationRequestMatcherConfigurer {
+    private static final String[] WHITELIST = {
+            "/actuator/prometheus",
+            "/actuator/health",
+            "/actuator/health/livenessState",
+            "/actuator/health/readinessState"
+    };
+
     public void configure(AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry configurer) {
-        configurer.anyRequest().authenticated();
+        configurer
+                .requestMatchers(WHITELIST).permitAll()
+                .anyRequest().authenticated();
     }
 }

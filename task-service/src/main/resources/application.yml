@@ -18,3 +18,21 @@ logging:
     org:
       zalando:
         logbook: TRACE
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      show-components: always
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+    defaults:
+      enabled: true
