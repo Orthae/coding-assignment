@@ -4,6 +4,13 @@ spring:
     username: "${USER_DB_USERNAME}"
     password: "${USER_DB_PASSWORD}"
 
+logbook:
+  format:
+    style: json
+
+logging:
+  config: classpath:logback-prod.xml
+
 token:
   public-key: "${JWT_PUBLIC_KEY}"
   private-key: "${JWT_PRIVATE_KEY}"

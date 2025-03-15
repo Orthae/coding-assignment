@@ -8,3 +8,10 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: "https://orthae.s3.eu-central-003.backblazeb2.com/jwks.json"
+
+logbook:
+  format:
+    style: json
+
+logging:
+  config: classpath:logback-prod.xml

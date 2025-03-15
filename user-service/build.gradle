@@ -33,6 +33,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.zalando:logbook-spring-boot-starter:3.11.0'
+	implementation 'io.micrometer:micrometer-tracing-bridge-brave'
+	implementation 'ch.qos.logback:logback-classic:1.5.16'
+	implementation 'net.logstash.logback:logstash-logback-encoder:6.6'
 
 	compileOnly 'org.projectlombok:lombok'
 
