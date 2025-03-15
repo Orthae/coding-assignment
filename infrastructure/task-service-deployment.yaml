@@ -20,8 +20,8 @@ spec:
           topologyKey: topology.kubernetes.io/zone
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
-              matchLabels:
-                app: task-service
+            matchLabels:
+              app: task-service
       containers:
         - name: task-service
           image: orthae/task-service:latest
