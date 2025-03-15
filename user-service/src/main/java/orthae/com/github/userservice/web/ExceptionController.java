@@ -8,34 +8,55 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import orthae.com.github.userservice.application.InvalidCredentials;
 import orthae.com.github.userservice.application.UserAlreadyExists;
 
+import java.time.Clock;
 import java.util.List;
 
 @ControllerAdvice
 public class ExceptionController {
+    private final Clock clock;
+
+    public ExceptionController(Clock clock) {
+        this.clock = clock;
+    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handle(MethodArgumentNotValidException exception) {
-        List<ErrorMessage> errors = exception.getBindingResult()
+        var errors = exception.getBindingResult()
                 .getAllErrors()
                 .stream()
                 .map(ErrorMessage::from)
                 .toList();
 
-        return new ResponseEntity<>(new ErrorResponse(errors), HttpStatus.BAD_REQUEST);
+        var response = ErrorResponse.builder()
+                .errors(errors)
+                .timestamp(clock.instant())
+                .build();
+
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(InvalidCredentials.class)
     public ResponseEntity<ErrorResponse> handle(InvalidCredentials exception) {
-        List<ErrorMessage> errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
+        var errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
 
-        return new ResponseEntity<>(new ErrorResponse(errors), HttpStatus.BAD_REQUEST);
+        var response = ErrorResponse.builder()
+                .errors(errors)
+                .timestamp(clock.instant())
+                .build();
+
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 
     }
 
     @ExceptionHandler(UserAlreadyExists.class)
     public ResponseEntity<ErrorResponse> handle(UserAlreadyExists exception) {
-        List<ErrorMessage> errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
+        var errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
 
-        return new ResponseEntity<>(new ErrorResponse(errors), HttpStatus.BAD_REQUEST);
+        var response = ErrorResponse.builder()
+                .errors(errors)
+                .timestamp(clock.instant())
+                .build();
+
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 }

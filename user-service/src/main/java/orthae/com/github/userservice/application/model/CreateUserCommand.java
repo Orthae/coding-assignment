@@ -1,7 +1,6 @@
 package orthae.com.github.userservice.application.model;
 
 
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +11,7 @@ import orthae.com.github.userservice.infrastructure.config.ValidEnum;
 @AllArgsConstructor
 public class CreateUserCommand {
         @NotBlank(message = "Username cannot be empty.")
-        @Length(max = 50, message = "Username cannot be longer than 50 characters.")
+        @Length(max = 64, message = "Username cannot be longer than 64 characters.")
         private final String username;
 
         @NotBlank(message = "Password cannot be empty.")
