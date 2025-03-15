@@ -37,7 +37,7 @@ public class TokenFactory {
             var token = jwtEncoder.encode(JwtEncoderParameters.from(claims));
 
             return TokenModel.builder()
-                    .issuedAt(clock.instant())
+                    .issuedAt(now)
                     .expiresAt(claims.getExpiresAt())
                     .token(token.getTokenValue())
                     .build();

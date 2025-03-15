@@ -1,7 +1,7 @@
 package orthae.com.github.userservice.application;
 
-public class InvalidCredentials extends RuntimeException {
-    public InvalidCredentials() {
+public class InvalidCredentialsException extends RuntimeException {
+    public InvalidCredentialsException() {
         super("Entered credentials are invalid.");
     }
 }

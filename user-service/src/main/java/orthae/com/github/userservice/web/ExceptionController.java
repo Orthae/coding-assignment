@@ -5,8 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import orthae.com.github.userservice.application.InvalidCredentials;
-import orthae.com.github.userservice.application.UserAlreadyExists;
+import orthae.com.github.userservice.application.InvalidCredentialsException;
+import orthae.com.github.userservice.application.UserAlreadyExistsException;
 
 import java.time.Clock;
 import java.util.List;
@@ -32,11 +32,12 @@ public class ExceptionController {
                 .timestamp(clock.instant())
                 .build();
 
-        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(response);
     }
 
-    @ExceptionHandler(InvalidCredentials.class)
-    public ResponseEntity<ErrorResponse> handle(InvalidCredentials exception) {
+    @ExceptionHandler(InvalidCredentialsException.class)
+    public ResponseEntity<ErrorResponse> handle(InvalidCredentialsException exception) {
         var errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
 
         var response = ErrorResponse.builder()
@@ -44,12 +45,12 @@ public class ExceptionController {
                 .timestamp(clock.instant())
                 .build();
 
-        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(response);
     }
 
-    @ExceptionHandler(UserAlreadyExists.class)
-    public ResponseEntity<ErrorResponse> handle(UserAlreadyExists exception) {
+    @ExceptionHandler(UserAlreadyExistsException.class)
+    public ResponseEntity<ErrorResponse> handle(UserAlreadyExistsException exception) {
         var errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
 
         var response = ErrorResponse.builder()
@@ -57,6 +58,7 @@ public class ExceptionController {
                 .timestamp(clock.instant())
                 .build();
 
-        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(response);
     }
 }

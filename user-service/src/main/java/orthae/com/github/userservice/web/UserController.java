@@ -27,7 +27,7 @@ public class UserController {
     public ResponseEntity<UserModel> signup(@Valid @RequestBody CreateUserCommand command) {
         var user = userService.createUser(command);
 
-        return ResponseEntity.status(HttpStatus.OK)
+        return ResponseEntity.status(HttpStatus.CREATED)
                 .body(user);
     }
 

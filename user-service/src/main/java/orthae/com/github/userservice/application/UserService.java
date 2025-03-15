@@ -28,7 +28,7 @@ public class UserService {
 
     public UserModel createUser(CreateUserCommand command) {
         if(userRepository.existsByUsername(command.getUsername())) {
-            throw new UserAlreadyExists();
+            throw new UserAlreadyExistsException();
         }
 
         var user = userFactory.create(command);
@@ -38,9 +38,9 @@ public class UserService {
     }
 
     public TokenModel createToken(CreateTokenCommand command) {
-        var user = userRepository.findByUsername(command.getUsername()).orElseThrow(InvalidCredentials::new);
+        var user = userRepository.findByUsername(command.getUsername()).orElseThrow(InvalidCredentialsException::new);
         if(!passwordEncoder.matches(command.getPassword(), user.getPassword())) {
-            throw new InvalidCredentials();
+            throw new InvalidCredentialsException();
         }
 
         return tokenFactory.createToken(user);
