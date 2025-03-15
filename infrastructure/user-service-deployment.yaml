@@ -28,6 +28,13 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
@@ -43,6 +50,7 @@ spec:
               value: "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCnuEJIe/s7UJ8b4BCD5cLloyshqyoqn5M9gwboLGBQfRkHYrV5QrL4XWNRN3LK2gGjUpMdaQVkCdt6nR1BBmlUMqdDIAw2wxGYBmFa7kCBUqnNFaYC/uNyD33QQ1FSGRdZI33Fdnd5O511MtDKaLiX0DfdPeQBALCPEh8RhmB3GmdGeJO2tHLWp1XHBq1kCu3A5LSB8dhSHKCbgZ0XVJMHdQVq6KYwcOkq2umoz58QPemOS5oYjB+sUIX9PZyD4aexC2bM20kSJFmN7Eq4vAgJl2HIxzlHEVzgF+1WP48u3E9f53m0eGl0TBRYBxBlbyU79EYk7frzj5pS6+o/8CdfAgMBAAECggEAKBct1Oi57XxAhCfDmtulgkHGEha5jhW12urCkGXnIeY9QNwx98nfQOoFzwibimyhHpqi6tFLRhXrHjyHHR98tvEitTNoaACp6HaB9/vidGc/inPFyoqF8KJOVyV4P1EbGSYYLsa6GUMMSNL8QJ3WngdaCyr7oNe63IAe6BAAaAeGTVioBotqYb4/ukFlAAUBMXU90J2/euejvoVxGzbEzfspJaF3mioesi+5XI2BNdvWgzEM7nzx6gLfwz+aRqkKSYj/sFSShd2YPJmhvx/qQyJjR3+FSghh3DWvRXsG5DVEuM/qSDRTsFyu2kjIiWdsYuSjqwOtMaq2H0bkQXGcyQKBgQDrpvLvXofAcfKzeLC89EWiim/oc9Tjy+k6Flsdj6MvVf5UH8npQpW6Kbfm7uharoCy5BsZnPkS9d1kS9XOadLATENFedoUJDdadZUb6wOHn0d+e89D7jo7TsdwrqBU0gJJ00LTKjzBmOILomdzbRAjRBuniPZ7yG5w565225y4JwKBgQC2M60RepMgoap8f+GuOtcLpwsFdzSGw1looCTL6qCU7S9LOAG0CYCrZnK1QySHEwMwyAUlPyc4jtt+N6Vnjb5jtAzmexQNErmoU3E3soq7A/6dOKzv+EIplwI8O7rGHuoJoivJRa2VTE3qKt9ffWi56aUVz5OD4raNZ8qu0BOiCQKBgQChpEDbhMIldYP/K3hABGaHmeItVtbe8o4mdBNH8bED1T7BQZTkVfISYm9tDs9+9Ff/XYxhQ1VudgvIsmQUVG5lzWoPjAfU7QqzGBiRr+EZ9F28Gv0PIaf76ovPdVkxFWTQcwNRiZVnTpEvXdUMTfFV33AAuWgpfFCVTbZUfUvA3QKBgC3H0D2rEdrKJD9CFp+jkzMPVtqZuC4AWa/LRVOjcZPaAN8ihHMLTDRE+p+G7l+uLEgOihRwyNcSNh6BtuLNH8CHlhI3bLNYOCQOS01WZDtXZpt0iSeGtoEiu2INFAIB9IZVJDFfe50e3hjvis7AgRbtmRhg3sztozbmlGvWRoiZAoGABk/sn2Z4rZKLqqFTV5cIVjcGFnypGMbBFYKWGbRP1A4njWXr/XSGV/ZPACcMFv7W5uVGYrO5GUz51j9Y22VVuMHFXvaGhyU17O3fKzJqmpLx/JRLglX+BeGEx2RMn3eb5nhAMqBDYy4miLYp+b3Wg2U6gMopL84rBnQqkgQ3fPw="
             - name: JWT_EXPIRATION
               value: "PT1H"
+      restartPolicy: Always
 ---
 apiVersion: v1
 kind: Service
