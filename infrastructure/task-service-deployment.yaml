@@ -5,7 +5,7 @@ metadata:
   labels:
     app: task-service
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: task-service
@@ -15,6 +15,13 @@ spec:
       labels:
         app: task-service
     spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+              matchLabels:
+                app: task-service
       containers:
         - name: task-service
           image: orthae/task-service:latest

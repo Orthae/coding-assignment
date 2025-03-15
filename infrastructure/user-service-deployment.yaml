@@ -5,7 +5,7 @@ metadata:
   labels:
     app: user-service
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: user-service
@@ -15,6 +15,13 @@ spec:
       labels:
         app: user-service
     spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: user-service
       containers:
         - name: user-service
           image: orthae/user-service:latest
