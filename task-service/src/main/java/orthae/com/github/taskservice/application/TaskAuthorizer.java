@@ -4,14 +4,14 @@ import orthae.com.github.taskservice.domain.Task;
 
 public class TaskAuthorizer {
     public static void authorize(Task task, AuthenticatedUser user) {
-        if(user.role().equals(Role.ADMIN)) {
+        if(user.getRole().equals(Role.ADMIN)) {
             return;
         }
 
-        if(task.getCreatedBy().getId().equals(user.id())) {
+        if(task.getCreatedBy().getId().equals(user.getId())) {
             return;
         }
 
-        throw new ActionUnauthorized();
+        throw new ActionUnauthorizedException();
     }
 }

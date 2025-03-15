@@ -38,6 +38,6 @@ public class SecurityConfiguration {
     public JwtDecoder jwtDecoder(OAuth2ResourceServerProperties properties) {
         return Optional.ofNullable(properties.getJwt().getJwkSetUri())
                 .map(uri -> NimbusJwtDecoder.withJwkSetUri(uri).build())
-                .orElseThrow(() -> new IllegalArgumentException("JwkSetUri is required"));
+                .orElseThrow(() -> new IllegalArgumentException("JwkSetUri is required."));
     }
 }

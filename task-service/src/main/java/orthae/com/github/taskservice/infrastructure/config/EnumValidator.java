@@ -18,6 +18,6 @@ public class EnumValidator implements ConstraintValidator<ValidEnum, String> {
     @Override
     public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext) {
         return Arrays.stream(this.annotation.type().getEnumConstants())
-                .anyMatch(e -> e.name().equals(value));
+                .anyMatch(entry -> entry.name().equals(value));
     }
 }

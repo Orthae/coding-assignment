@@ -1,10 +1,8 @@
-package orthae.com.github.taskservice.application;
+package orthae.com.github.taskservice.application.model;
 
+import orthae.com.github.taskservice.application.AuthenticatedUser;
 import orthae.com.github.taskservice.application.command.CreateTaskCommand;
 import orthae.com.github.taskservice.application.command.UpdateTaskCommand;
-import orthae.com.github.taskservice.application.model.TaskModel;
-import orthae.com.github.taskservice.application.model.TaskStatusModel;
-import orthae.com.github.taskservice.application.model.UserModel;
 import orthae.com.github.taskservice.domain.*;
 
 import java.util.UUID;
@@ -44,15 +42,11 @@ public class TaskMapper {
 
     private static class UserMapper {
         public static UserModel toModel(User user) {
-            return UserModel.builder()
-                    .id(user.getId())
-                    .build();
+            return new UserModel(user.getId());
         }
 
         public static User toDomain(AuthenticatedUser model) {
-            return User.builder()
-                    .id(model.id())
-                    .build();
+            return new User(model.getId());
         }
     }
 

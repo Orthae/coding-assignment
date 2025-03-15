@@ -6,7 +6,6 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @Data
-@Builder
 public class User {
     private final UUID id;
 }

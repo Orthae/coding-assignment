@@ -27,7 +27,7 @@ public class TaskController {
         var user = AuthenticatedUser.from(token);
         var task = service.createTask(command, user);
 
-        return ResponseEntity.status(HttpStatus.OK)
+        return ResponseEntity.status(HttpStatus.CREATED)
                 .body(task);
     }
 

@@ -5,11 +5,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import orthae.com.github.taskservice.application.ActionUnauthorized;
-import orthae.com.github.taskservice.application.TaskNotFound;
+import orthae.com.github.taskservice.application.ActionUnauthorizedException;
+import orthae.com.github.taskservice.application.InvalidTokenFormat;
+import orthae.com.github.taskservice.application.TaskNotFoundException;
 
 import java.time.Clock;
-import java.time.OffsetDateTime;
 import java.util.List;
 
 @ControllerAdvice
@@ -33,11 +33,12 @@ public class ExceptionController {
                 .timestamp(clock.instant())
                 .build();
 
-        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(response);
     }
 
-    @ExceptionHandler(TaskNotFound.class)
-    public ResponseEntity<ErrorResponse> handle(TaskNotFound exception) {
+    @ExceptionHandler(TaskNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handle(TaskNotFoundException exception) {
         var errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
 
         var response = ErrorResponse.builder()
@@ -45,11 +46,12 @@ public class ExceptionController {
                 .timestamp(clock.instant())
                 .build();
 
-        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(response);
     }
 
-    @ExceptionHandler(ActionUnauthorized.class)
-    public ResponseEntity<ErrorResponse> handle(ActionUnauthorized exception) {
+    @ExceptionHandler(ActionUnauthorizedException.class)
+    public ResponseEntity<ErrorResponse> handle(ActionUnauthorizedException exception) {
         var errors = List.of(ErrorMessage.ofMessage(exception.getMessage()));
 
         var response = ErrorResponse.builder()
@@ -57,6 +59,14 @@ public class ExceptionController {
                 .timestamp(clock.instant())
                 .build();
 
-        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(response);
+    }
+
+    @ExceptionHandler(InvalidTokenFormat.class)
+    public ResponseEntity<Void> handle() {
+
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .build();
     }
 }

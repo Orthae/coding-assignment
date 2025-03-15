@@ -6,15 +6,11 @@ import java.util.UUID;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class TaskModel {
-    private UUID id;
-    private UserModel createdBy;
-    private String title;
-    private String description;
-    private TaskStatusModel status;
+    private final UUID id;
+    private final UserModel createdBy;
+    private final String title;
+    private final String description;
+    private final TaskStatusModel status;
 }
-
-
-

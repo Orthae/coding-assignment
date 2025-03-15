@@ -9,8 +9,6 @@ import java.util.UUID;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
-@Builder
 public class UserModel {
-    private UUID id;
+    private final UUID id;
 }

@@ -3,6 +3,7 @@ package orthae.com.github.taskservice.application;
 import org.springframework.stereotype.Service;
 import orthae.com.github.taskservice.application.command.CreateTaskCommand;
 import orthae.com.github.taskservice.application.command.UpdateTaskCommand;
+import orthae.com.github.taskservice.application.model.TaskMapper;
 import orthae.com.github.taskservice.application.model.TaskModel;
 import orthae.com.github.taskservice.domain.*;
 
@@ -25,9 +26,9 @@ public class TaskService {
     }
 
     public List<TaskModel> getTasks(AuthenticatedUser user) {
-        var tasks = switch (user.role()) {
+        var tasks = switch (user.getRole()) {
             case ADMIN -> repository.findAll();
-            case USER -> repository.findAllByUserId(user.id());
+            case USER -> repository.findAllByUserId(user.getId());
         };
 
         return tasks.stream()
@@ -36,7 +37,7 @@ public class TaskService {
     }
 
     public TaskModel updateTask(UUID id, UpdateTaskCommand command, AuthenticatedUser user) {
-        var task = repository.findById(id).orElseThrow(TaskNotFound::new);
+        var task = repository.findById(id).orElseThrow(TaskNotFoundException::new);
         TaskAuthorizer.authorize(task, user);
 
         var updatedTask = TaskMapper.updateTask(command, task);
@@ -46,7 +47,7 @@ public class TaskService {
     }
 
     public TaskModel deleteTask(UUID id, AuthenticatedUser user) {
-        var task = repository.findById(id).orElseThrow(TaskNotFound::new);
+        var task = repository.findById(id).orElseThrow(TaskNotFoundException::new);
         TaskAuthorizer.authorize(task, user);
 
         repository.deleteById(task.getId());
