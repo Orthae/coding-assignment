@@ -1,0 +1,19 @@
+services:
+
+  user-service:
+    build:
+      context: user-service
+      dockerfile: ../build/user-service.Dockerfile
+    image: "orthae/user-service:latest"
+
+  task-service:
+    build:
+      context: task-service
+      dockerfile: ../build/task-service.Dockerfile
+    image: "orthae/task-service:latest"
+
+  dev-db:
+    build:
+      context: database
+      dockerfile: ../build/dev-db.Dockerfile
+    image: "orthae/dev-db:latest"

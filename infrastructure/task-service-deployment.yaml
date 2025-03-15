@@ -19,7 +19,33 @@ spec:
         - name: task-service
           image: orthae/task-service:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               protocol: TCP
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+            - name: TASK_DB_URL
+              value: "jdbc:postgresql://host.minikube.internal:5432/postgres?currentSchema=public"
+            - name: TASK_DB_USERNAME
+              value: "postgres"
+            - name: TASK_DB_PASSWORD
+              value: "root"
+            - name: JWK_SET_URI
+              value: "https://orthae.s3.eu-central-003.backblazeb2.com/jwks.json"
       restartPolicy: Always
-      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-service
+  labels:
+    app: task-service
+spec:
+  selector:
+    app: task-service
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30001
+  type: NodePort

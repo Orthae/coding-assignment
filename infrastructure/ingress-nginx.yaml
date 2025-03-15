@@ -14,12 +14,12 @@ spec:
                 name: user-service
                 port:
                   number: 8080
-#    - http:
-#        paths:
-#          - path: /auth/
-#            pathType: ImplementationSpecific
-#            backend:
-#              service:
-#                name: task-service
-#                port:
-#                  number: 8081
+    - http:
+        paths:
+          - path: /tasks
+            pathType: Prefix
+            backend:
+              service:
+                name: task-service
+                port:
+                  number: 8080
