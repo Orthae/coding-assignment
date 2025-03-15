@@ -1,4 +1,4 @@
-package orthae.com.github.userservice.domain;
+package orthae.com.github.userservice.application;
 
 public class UserAlreadyExists extends RuntimeException {
     public UserAlreadyExists() {

@@ -1,4 +1,4 @@
-package orthae.com.github.userservice.domain;
+package orthae.com.github.userservice.application.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @Data
 @Builder
-public class User {
+public class UserModel {
     private final UUID id;
     private final String username;
-    private final String password;
-    private final Role role;
+    private final RoleModel role;
 }

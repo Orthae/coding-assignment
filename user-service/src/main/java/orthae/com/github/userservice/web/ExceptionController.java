@@ -5,8 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import orthae.com.github.userservice.domain.InvalidCredentials;
-import orthae.com.github.userservice.domain.UserAlreadyExists;
+import orthae.com.github.userservice.application.InvalidCredentials;
+import orthae.com.github.userservice.application.UserAlreadyExists;
 
 import java.util.List;
 

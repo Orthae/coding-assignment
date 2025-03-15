@@ -1,10 +1,10 @@
-package orthae.com.github.userservice.application;
+package orthae.com.github.userservice.application.factory;
 
-import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Component;
+import orthae.com.github.userservice.application.model.TokenModel;
 import orthae.com.github.userservice.domain.User;
 import orthae.com.github.userservice.infrastructure.config.TokenProperties;
 
@@ -23,15 +23,23 @@ public class TokenFactory {
         this.clock = clock;
     }
 
-    public Jwt createToken(User user) {
-            JwtClaimsSet claims = JwtClaimsSet.builder()
+    public TokenModel createToken(User user) {
+        var now = clock.instant();
+            var claims = JwtClaimsSet.builder()
                     .issuer("user-service")
-                    .expiresAt(clock.instant().plus(tokenProperties.getExpiration()))
+                    .issuedAt(now)
+                    .expiresAt(now.plus(tokenProperties.getExpiration()))
                     .claim("id", user.getId())
                     .claim("username", user.getUsername())
                     .claim("roles", List.of(user.getRole()))
                     .build();
 
-            return jwtEncoder.encode(JwtEncoderParameters.from(claims));
+            var token = jwtEncoder.encode(JwtEncoderParameters.from(claims));
+
+            return TokenModel.builder()
+                    .issuedAt(clock.instant())
+                    .expiresAt(claims.getExpiresAt())
+                    .token(token.getTokenValue())
+                    .build();
     }
 }

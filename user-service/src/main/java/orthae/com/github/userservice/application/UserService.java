@@ -1,41 +1,46 @@
 package orthae.com.github.userservice.application;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
+import orthae.com.github.userservice.application.factory.TokenFactory;
+import orthae.com.github.userservice.application.factory.UserFactory;
+import orthae.com.github.userservice.application.factory.UserMapper;
+import orthae.com.github.userservice.application.model.TokenModel;
+import orthae.com.github.userservice.application.model.UserModel;
 import orthae.com.github.userservice.domain.*;
-import orthae.com.github.userservice.web.model.LoginCommand;
-import orthae.com.github.userservice.web.model.SignupCommand;
+import orthae.com.github.userservice.application.model.CreateTokenCommand;
+import orthae.com.github.userservice.application.model.CreateUserCommand;
 
 @Service
 public class UserService {
-    private final PasswordEncoder passwordEncoder;
-    private final UserRepository userRepository;
+    private final UserFactory userFactory;
     private final TokenFactory tokenFactory;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(PasswordEncoder passwordEncoder, UserRepository userRepository, TokenFactory tokenFactory) {
-        this.passwordEncoder = passwordEncoder;
+
+    public UserService(UserFactory userFactory, UserRepository userRepository, TokenFactory tokenFactory, PasswordEncoder passwordEncoder) {
+        this.userFactory = userFactory;
         this.userRepository = userRepository;
         this.tokenFactory = tokenFactory;
+        this.passwordEncoder = passwordEncoder;
     }
 
-    public void createUser(SignupCommand command) {
-        if(userRepository.existsByUsername(command.username())) {
+    public UserModel createUser(CreateUserCommand command) {
+        if(userRepository.existsByUsername(command.getUsername())) {
             throw new UserAlreadyExists();
         }
 
-        var role = switch (command.role()) {
-            case ADMIN -> Role.ADMIN;
-            case USER -> Role.USER;
-        };
+        var user = userFactory.create(command);
+        userRepository.save(user);
 
-        userRepository.save(User.of(command.username(), passwordEncoder.encode(command.password()), role));
+        return UserMapper.toModel(user);
     }
 
-    public Jwt createToken(LoginCommand command) {
-        var user = userRepository.findByUsername(command.username()).orElseThrow(InvalidCredentials::new);
-        if(!passwordEncoder.matches(command.password(), user.getPassword())) {
-          throw new InvalidCredentials();
+    public TokenModel createToken(CreateTokenCommand command) {
+        var user = userRepository.findByUsername(command.getUsername()).orElseThrow(InvalidCredentials::new);
+        if(!passwordEncoder.matches(command.getPassword(), user.getPassword())) {
+            throw new InvalidCredentials();
         }
 
         return tokenFactory.createToken(user);
