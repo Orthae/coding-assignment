@@ -1,0 +1,3065 @@
+{
+	"info": {
+		"_postman_id": "8a1d824a-9b6c-4a62-afd1-d3c88be1ad8b",
+		"name": "Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43109010"
+	},
+	"item": [
+		{
+			"name": "User service",
+			"item": [
+				{
+					"name": "Signup",
+					"item": [
+						{
+							"name": "Create user (User)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"{{$randomUserName}}\",\n    \"password\": \"test\",\n    \"role\": \"USER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create user (User)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"{{$randomUserName}}\",\n    \"password\": \"test\",\n    \"role\": \"USER\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/auth/signup",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/vdn.orthae.public.v1+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Mar 2025 13:39:44 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"33927c34-05ef-4ef0-bb51-64924adaff0b\",\n    \"username\": \"Rosemarie_Collier13\",\n    \"role\": \"USER\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create user (Long username)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"grundstücksverkehrsgenehmigungszuständigkeitsübertragungsverordnung\",\n    \"password\": \"test\",\n    \"role\": \"USER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create user (Long username)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"grundstücksverkehrsgenehmigungszuständigkeitsübertragungsverordnung\",\n    \"password\": \"test\",\n    \"role\": \"USER\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/auth/signup",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/vdn.orthae.public.v1+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Mar 2025 14:01:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-03-15T14:01:57.761800373Z\",\n    \"errors\": [\n        {\n            \"field\": \"username\",\n            \"message\": \"Username cannot be longer than 64 characters.\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Create user (Empty body)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create user (Empty body)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/auth/signup",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/vdn.orthae.public.v1+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Mar 2025 13:48:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-03-15T13:48:35.385267507Z\",\n    \"errors\": [\n        {\n            \"field\": \"password\",\n            \"message\": \"Password cannot be empty.\"\n        },\n        {\n            \"field\": \"role\",\n            \"message\": \"Role must use following values, 'ADMIN', 'USER'.\"\n        },\n        {\n            \"field\": \"username\",\n            \"message\": \"Username cannot be empty.\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Create user (Admin)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"{{$randomUserName}}\",\n    \"password\": \"test\",\n    \"role\": \"ADMIN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create user (Admin)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"{{$randomUserName}}\",\n    \"password\": \"test\",\n    \"role\": \"ADMIN\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/auth/signup",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/vdn.orthae.public.v1+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Mar 2025 13:39:34 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"78e57e52-8ba7-4dc0-8fa7-6700a6032107\",\n    \"username\": \"Everett14\",\n    \"role\": \"ADMIN\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create user (Invalid role)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"{{$randomUserName}}\",\n    \"password\": \"test\",\n    \"role\": \"SUPER_ADMIN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create user (Invalid role)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"{{$randomUserName}}\",\n    \"password\": \"test\",\n    \"role\": \"SUPER_ADMIN\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/auth/signup",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/vdn.orthae.public.v1+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Mar 2025 13:39:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-03-15T13:39:00.032184541Z\",\n    \"errors\": [\n        {\n            \"field\": \"role\",\n            \"message\": \"Role must use following values, 'ADMIN', 'USER'.\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Create user (Already exists)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"TestUser\",\n    \"password\": \"test\",\n    \"role\": \"ADMIN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create user (Already exists)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"TestUser\",\n    \"password\": \"test\",\n    \"role\": \"ADMIN\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/auth/signup",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/vdn.orthae.public.v1+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Mar 2025 13:38:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-03-15T13:38:38.488240882Z\",\n    \"errors\": [\n        {\n            \"message\": \"User already exists.\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"TestUser\",\n    \"password\": \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"TestUser\",\n    \"password\": \"test\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/auth/login",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/vdn.orthae.public.v1+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Mar 2025 13:45:35 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"issuedAt\": \"2025-03-15T13:45:35.115109539Z\",\n    \"expiresAt\": \"2030-03-14T13:45:35.107564005Z\",\n    \"token\": \"eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ1c2VyLXNlcnZpY2UiLCJpZCI6ImQzYjZiMWE1LTNmM2QtNGQxNy04ZTRlLWM2ZTBjYTJhYjBiZCIsImV4cCI6MTg5OTcyNjMzNSwiaWF0IjoxNzQyMDQ2MzM1LCJyb2xlcyI6WyJBRE1JTiJdLCJ1c2VybmFtZSI6IlRlc3RVc2VyIn0.hTKikb0IT56thSspVchRdbda7ywiZi_XXgZ7wObgIrzpyTpPKsQ-g-La2W60S4kdSVsFqxaS13VZiKJ3iTwLYQ1INASNjr2MANjZij_p9Vl87j7Kc4FvasE94629CWKZ3yl0zm5zr6IW-l5H7S-dYtKHTT8xGoFcn5BoLswEIZXXDt5DERhbJbCEaMwu7igaDQtEnIv8OMXym4PnEWzAmVxra8x_bsGIuRD6EGG3BjsNhqJmlk4OhvERN15Zxv3igv6RkH9Ie6YBTcYf5LMVtxQs0oLFT5aNJUxLMUyrSq9KxPVFhpCs5XLkSySPkWU8ehwaFTFKmoWm1Kh1KsWsog\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Login (Wrong username)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"ThisUserDoesNotExists\",\n    \"password\": \"DoesNotMatter\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login invalid (Wrong username)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"ThisUserDoesNotExists\",\n    \"password\": \"DoesNotMatter\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/auth/login",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/vdn.orthae.public.v1+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Mar 2025 13:39:17 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-03-15T13:39:17.203777171Z\",\n    \"errors\": [\n        {\n            \"message\": \"Entered credentials are invalid.\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Login (Wrong password)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"TestUser\",\n    \"password\": \"wrong-password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/auth/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login invalid (Wrong password)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/vdn.orthae.public.v1+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"TestUser\",\n    \"password\": \"wrong-password\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/auth/login",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/vdn.orthae.public.v1+json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Mar 2025 13:39:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-03-15T13:39:27.119882594Z\",\n    \"errors\": [\n        {\n            \"message\": \"Entered credentials are invalid.\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Task service",
+			"item": [
+				{
+					"name": "Get tasks (USER)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get tasks (USER)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 16:51:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"id\": \"c05d5736-bfae-4e62-9170-6ecd1d8bd39c\",\n            \"createdBy\": {\n                \"id\": \"d3b6b1a5-3f3d-4d17-8e4e-c6e0ca2ab0bd\"\n            },\n            \"title\": \"USER: facilitate Representative Sleek withdrawal\",\n            \"description\": \"Qui asperiores aut ut impedit. Labore a modi molestiae qui numquam fugit et vel. Quae enim dicta. Soluta officia repellendus voluptatem et voluptas eum.\",\n            \"status\": \"PENDING\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get tasks (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_ADMIN_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get tasks (ADMIN)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 16:51:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"id\": \"c05d5736-bfae-4e62-9170-6ecd1d8bd39c\",\n            \"createdBy\": {\n                \"id\": \"d3b6b1a5-3f3d-4d17-8e4e-c6e0ca2ab0bd\"\n            },\n            \"title\": \"USER: facilitate Representative Sleek withdrawal\",\n            \"description\": \"Qui asperiores aut ut impedit. Labore a modi molestiae qui numquam fugit et vel. Quae enim dicta. Soluta officia repellendus voluptatem et voluptas eum.\",\n            \"status\": \"PENDING\"\n        },\n        {\n            \"id\": \"fcaa2d3e-442b-419c-8438-1a0dcdd36f4f\",\n            \"createdBy\": {\n                \"id\": \"21ec5020-897e-4c32-abe1-6c836ef5d6ce\"\n            },\n            \"title\": \"ADMIN: cross-platform Car\",\n            \"description\": \"Ducimus quia quasi similique ut dolores cupiditate odio illo expedita. Omnis inventore soluta modi provident ab qui dolores explicabo aut. Velit culpa occaecati dolorem necessitatibus quae. Doloremque laborum unde quasi. Possimus quasi perferendis ut fugiat sunt architecto. Vero asperiores eveniet cupiditate sunt pariatur suscipit enim qui praesentium.\",\n            \"status\": \"PENDING\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create task (USER)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"{{$randomLoremParagraph}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create task (USER)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"{{$randomLoremParagraph}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 16:51:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"c05d5736-bfae-4e62-9170-6ecd1d8bd39c\",\n    \"createdBy\": {\n        \"id\": \"d3b6b1a5-3f3d-4d17-8e4e-c6e0ca2ab0bd\"\n    },\n    \"title\": \"USER: facilitate Representative Sleek withdrawal\",\n    \"description\": \"Qui asperiores aut ut impedit. Labore a modi molestiae qui numquam fugit et vel. Quae enim dicta. Soluta officia repellendus voluptatem et voluptas eum.\",\n    \"status\": \"PENDING\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create task (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_ADMIN_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"ADMIN: {{$randomWords}}\",\n    \"description\": \"{{$randomLoremParagraph}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create task (ADMIN)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"ADMIN: {{$randomWords}}\",\n    \"description\": \"{{$randomLoremParagraph}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 16:51:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"fcaa2d3e-442b-419c-8438-1a0dcdd36f4f\",\n    \"createdBy\": {\n        \"id\": \"21ec5020-897e-4c32-abe1-6c836ef5d6ce\"\n    },\n    \"title\": \"ADMIN: cross-platform Car\",\n    \"description\": \"Ducimus quia quasi similique ut dolores cupiditate odio illo expedita. Omnis inventore soluta modi provident ab qui dolores explicabo aut. Velit culpa occaecati dolorem necessitatibus quae. Doloremque laborum unde quasi. Possimus quasi perferendis ut fugiat sunt architecto. Vero asperiores eveniet cupiditate sunt pariatur suscipit enim qui praesentium.\",\n    \"status\": \"PENDING\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create task (Empty body)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create task (USER) Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 17:18:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"field\": \"title\",\n            \"message\": \"Title cannot be empty\"\n        },\n        {\n            \"field\": \"description\",\n            \"message\": \"Description cannot be empty\"\n        }\n    ],\n    \"timestamp\": \"2025-03-15T17:18:35.068004547Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update task (No permission)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"USER UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "fcaa2d3e-442b-419c-8438-1a0dcdd36f4f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update task (USER)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"USER UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "fcaa2d3e-442b-419c-8438-1a0dcdd36f4f"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 16:59:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"message\": \"You don't have permission to perform this action.\"\n        }\n    ],\n    \"timestamp\": \"2025-03-15T16:59:30.954651071Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update task (Empty body)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "c05d5736-bfae-4e62-9170-6ecd1d8bd39c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update task (Empty body)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "c05d5736-bfae-4e62-9170-6ecd1d8bd39c"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 17:12:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"field\": \"title\",\n            \"message\": \"Title cannot be empty.\"\n        },\n        {\n            \"field\": \"status\",\n            \"message\": \"Status must use following values, 'PENDING', 'COMPLETED'.\"\n        },\n        {\n            \"field\": \"description\",\n            \"message\": \"Description cannot be empty.\"\n        }\n    ],\n    \"timestamp\": \"2025-03-15T17:12:20.866337112Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update task (User self edit)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"USER UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "c05d5736-bfae-4e62-9170-6ecd1d8bd39c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update task (User self edit)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"USER UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "c05d5736-bfae-4e62-9170-6ecd1d8bd39c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 17:04:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"c05d5736-bfae-4e62-9170-6ecd1d8bd39c\",\n    \"createdBy\": {\n        \"id\": \"d3b6b1a5-3f3d-4d17-8e4e-c6e0ca2ab0bd\"\n    },\n    \"title\": \"USER: blue Human moderator Shoes Lead\",\n    \"description\": \"USER UPDATE: A ut deserunt consectetur tenetur nam. Voluptatem quam in doloremque sit delectus delectus. Cum aut aspernatur. Quos est at sint amet quam dignissimos. Culpa at dolores aut debitis saepe dolor aliquid alias.\",\n    \"status\": \"PENDING\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update task (Admin update)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"ADMIN UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "c05d5736-bfae-4e62-9170-6ecd1d8bd39c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update task (Admin update)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"ADMIN UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "c05d5736-bfae-4e62-9170-6ecd1d8bd39c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 17:05:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"c05d5736-bfae-4e62-9170-6ecd1d8bd39c\",\n    \"createdBy\": {\n        \"id\": \"d3b6b1a5-3f3d-4d17-8e4e-c6e0ca2ab0bd\"\n    },\n    \"title\": \"USER: Executive card gold\",\n    \"description\": \"ADMIN UPDATE: Sit quo aperiam nesciunt et qui nulla et voluptatem velit. Atque neque atque mollitia dolorem ratione. Quae sed vel id laboriosam minus est voluptatum.\",\n    \"status\": \"PENDING\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update task (Not found)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"USER UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "01959acc-2927-7e9e-bd39-2aaeca7b6512"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update task (Not found)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"USER UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "01959acc-2927-7e9e-bd39-2aaeca7b6512"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 17:16:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"message\": \"Task not found.\"\n        }\n    ],\n    \"timestamp\": \"2025-03-15T17:16:09.703905165Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete task (USER)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9dc2f5e4-41e4-4efc-9dda-d5addaec2de7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete task (USER)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9dc2f5e4-41e4-4efc-9dda-d5addaec2de7"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 17:22:10 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"9dc2f5e4-41e4-4efc-9dda-d5addaec2de7\",\n    \"createdBy\": {\n        \"id\": \"d3b6b1a5-3f3d-4d17-8e4e-c6e0ca2ab0bd\"\n    },\n    \"title\": \"USER: RAM Zimbabwe Oregon back Leu\",\n    \"description\": \"Omnis mollitia ex iure eligendi vero. Magni illum voluptatum eum corporis eum. Et odit pariatur. Nihil ipsam voluptatem facilis inventore aut maiores. Dolorem et recusandae animi debitis dolorum provident voluptatem. Et expedita atque.\",\n    \"status\": \"PENDING\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete task (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9dc2f5e4-41e4-4efc-9dda-d5addaec2de7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete task (Admin)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5e896050-5875-4581-aa17-62b376881a82"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 17:23:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"5e896050-5875-4581-aa17-62b376881a82\",\n    \"createdBy\": {\n        \"id\": \"d3b6b1a5-3f3d-4d17-8e4e-c6e0ca2ab0bd\"\n    },\n    \"title\": \"USER: reboot dot-com\",\n    \"description\": \"Rem libero eveniet quis unde rem adipisci optio est amet. Impedit beatae deserunt distinctio soluta ratione aut rerum molestias. Et itaque dicta voluptatem dolore ut et asperiores hic provident. Nobis ratione amet tempora autem libero atque reprehenderit consequatur repudiandae.\",\n    \"status\": \"PENDING\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete task (No permission)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9dc2f5e4-41e4-4efc-9dda-d5addaec2de7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete task (No permission)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6630528c-3a67-4531-b632-e58cbea64fca"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 17:24:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"message\": \"You don't have permission to perform this action.\"\n        }\n    ],\n    \"timestamp\": \"2025-03-15T17:24:36.980108331Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete task (Not found)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACTIVE_USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vdn.orthae.public.v1+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"USER UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tasks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tasks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "01959acc-2927-7e9e-bd39-2aaeca7b6512"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete task (Not found)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vdn.orthae.public.v1+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"USER: {{$randomWords}}\",\n    \"description\": \"USER UPDATE: {{$randomLoremParagraph}}\",\n    \"status\": \"PENDING\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/tasks/:id",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "01959acc-2927-7e9e-bd39-2aaeca7b6512"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vdn.orthae.public.v1+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Mar 2025 17:17:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"message\": \"Task not found.\"\n        }\n    ],\n    \"timestamp\": \"2025-03-15T17:17:43.296014172Z\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "EXPIRED_TOKEN",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "ACTIVE_ADMIN_TOKEN",
+			"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ1c2VyLXNlcnZpY2UiLCJpZCI6IjIxZWM1MDIwLTg5N2UtNGMzMi1hYmUxLTZjODM2ZWY1ZDZjZSIsImV4cCI6MTg5OTYyOTQwMSwicm9sZXMiOlsiQURNSU4iXSwidXNlcm5hbWUiOiJUZXN0QWRtaW4ifQ.Efb9ndrR-0yWgG__bOpYAOwSIWKn6p6QqifhQTYm9WmrGSJaZbqC09C6GobvVF-r04AVJ5NwFjWDtmeNDL1AXB_dl_tcqoS7su3SqTbeefz11CvX_519OrVtW65rAv4X1QeOmEY6jY2Jyd7Pf_Pk88Qu2F0pNpVePLb0Y1fp3waGKRYBNNTpNYjEyEnpxrHgJCnfe_0NUMSLTLkqQZbeLCibhaX9SvX0AuB5fg-2YdE2XHh9KFQgdJJeQdINtr0uRlBIEwd32D9fkevKp_UZTaKQWUbu0uTxk4lw1NPsoGyOyCXLbjKPk47UssE6uP_Pe8VVW3tcyvGJtS8Nz382FA",
+			"type": "string"
+		},
+		{
+			"key": "ACTIVE_USER_TOKEN",
+			"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ1c2VyLXNlcnZpY2UiLCJpZCI6ImQzYjZiMWE1LTNmM2QtNGQxNy04ZTRlLWM2ZTBjYTJhYjBiZCIsImV4cCI6MTg5OTYyOTQ0Mywicm9sZXMiOlsiQURNSU4iXSwidXNlcm5hbWUiOiJUZXN0VXNlciJ9.BwOGyEJnS3AjXAJGgLd-FrnxPOFK1O5eT7UhhJOlh9jk69e1PKMlPWkjFRrIQwzQgEuWMW_BxUz1XJpxSBSuWPDE8kUhpaIy8qaAS67ltXxypSeHEXnR1c5cX8KAI3r5aSkN23ZhLubc8nVCPUALudohm-",
+			"type": "string"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "https://assignment.orthae.xyz",
+			"type": "string"
+		},
+		{
+			"value": "",
+			"type": "string"
+		}
+	]
+}
