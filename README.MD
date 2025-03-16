@@ -18,7 +18,7 @@ For the same time constraint reason, the test coverage is limited.
 ## Live Demo & API Testing
 A live demo of the deployed services is available at: https://assignment.orthae.xyz/ running inside a Kubernetes with nginx ingress controller.
 
-For API testing, a Postman collection is included in this repository.
+For API testing, a Postman collection is included in this repository. There is not OpenAPI documentation available.
 You can use it to quickly test endpoints without setting up the project locally.
 
 ## Project Structure
