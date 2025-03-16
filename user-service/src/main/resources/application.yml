@@ -10,7 +10,7 @@ logbook:
       - Authorization
     json-body-fields:
       - password
-      - accessToken
+      - token
     replacement: <omitted>
 
 logging:

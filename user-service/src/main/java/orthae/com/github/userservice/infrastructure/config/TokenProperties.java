@@ -26,15 +26,15 @@ public class TokenProperties {
     }
 
     public KeyPair getKeyPair() throws NoSuchAlgorithmException, InvalidKeySpecException {
-        KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+        var keyFactory = KeyFactory.getInstance("RSA");
 
-        byte[] publicKeyBytes = Base64.getDecoder().decode(publicKey);
-        X509EncodedKeySpec publicKeySpec = new X509EncodedKeySpec(publicKeyBytes);
-        PublicKey publicKey = keyFactory.generatePublic(publicKeySpec);
+        var publicKeyBytes = Base64.getDecoder().decode(publicKey);
+        var publicKeySpec = new X509EncodedKeySpec(publicKeyBytes);
+        var publicKey = keyFactory.generatePublic(publicKeySpec);
 
-        byte[] privateKeyBytes = Base64.getDecoder().decode(privateKey);
-        PKCS8EncodedKeySpec privateKeySpec = new PKCS8EncodedKeySpec(privateKeyBytes);
-        PrivateKey privateKey = keyFactory.generatePrivate(privateKeySpec);
+        var privateKeyBytes = Base64.getDecoder().decode(privateKey);
+        var privateKeySpec = new PKCS8EncodedKeySpec(privateKeyBytes);
+        var privateKey = keyFactory.generatePrivate(privateKeySpec);
 
         return new KeyPair(publicKey, privateKey);
     }

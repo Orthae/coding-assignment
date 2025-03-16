@@ -43,8 +43,8 @@ public class SecurityConfiguration {
 
     @Bean
     public JwtEncoder jwtEncoder(TokenProperties properties) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        KeyPair keyPair = properties.getKeyPair();
-        JWK jwk = new RSAKey.Builder((RSAPublicKey) keyPair.getPublic()).
+        var keyPair = properties.getKeyPair();
+        var jwk = new RSAKey.Builder((RSAPublicKey) keyPair.getPublic()).
                 privateKey(keyPair.getPrivate())
                 .build();
 
