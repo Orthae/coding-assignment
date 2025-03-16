@@ -1014,7 +1014,7 @@
 							]
 						},
 						{
-							"name": "Login (Wrong password)",
+							"name": "Login (Empty body)",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1031,7 +1031,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"TestUser\",\n    \"password\": \"wrong-password\"\n}",
+									"raw": "{\n\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1051,7 +1051,7 @@
 							},
 							"response": [
 								{
-									"name": "Login invalid (Wrong password)",
+									"name": "Login (Empty body)",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -1068,7 +1068,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"username\": \"TestUser\",\n    \"password\": \"wrong-password\"\n}",
+											"raw": "{\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1124,7 +1124,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 15 Mar 2025 13:39:27 GMT"
+											"value": "Sat, 15 Mar 2025 22:06:20 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1132,7 +1132,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"timestamp\": \"2025-03-15T13:39:27.119882594Z\",\n    \"errors\": [\n        {\n            \"message\": \"Entered credentials are invalid.\"\n        }\n    ]\n}"
+									"body": "{\n    \"timestamp\": \"2025-03-15T22:06:20.816246920Z\",\n    \"errors\": [\n        {\n            \"field\": \"password\",\n            \"message\": \"Password cannot be empty.\"\n        },\n        {\n            \"field\": \"username\",\n            \"message\": \"Username cannot be empty.\"\n        }\n    ]\n}"
 								}
 							]
 						}
@@ -1805,7 +1805,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "fcaa2d3e-442b-419c-8438-1a0dcdd36f4f"
+									"value": "c7504a02-5f48-488c-91bd-6dcae95ad55b"
 								}
 							]
 						}
@@ -2099,7 +2099,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "c05d5736-bfae-4e62-9170-6ecd1d8bd39c"
+									"value": "b5744eea-9a4c-4ce8-a68b-e0411a64bb44"
 								}
 							]
 						}
@@ -2248,7 +2248,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "c05d5736-bfae-4e62-9170-6ecd1d8bd39c"
+									"value": "b5744eea-9a4c-4ce8-a68b-e0411a64bb44"
 								}
 							]
 						}
@@ -3055,10 +3055,6 @@
 		{
 			"key": "BASE_URL",
 			"value": "https://assignment.orthae.xyz",
-			"type": "string"
-		},
-		{
-			"value": "",
 			"type": "string"
 		}
 	]

@@ -1,23 +1,15 @@
 package orthae.com.github.taskservice;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
+import org.springframework.boot.test.web.server.LocalServerPort;
 
-@SpringBootTest
-@Testcontainers
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BaseIntegrationTests {
 
-    @Container
-    @ServiceConnection
-    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15-alpine");
+    @LocalServerPort
+    private int port;
 
-    @BeforeAll
-    static void beforeAll() {
-
+    public String getUrl(String path) {
+        return "http://localhost:" + port + "/" + path;
     }
-
 }
