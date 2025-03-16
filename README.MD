@@ -12,8 +12,7 @@ For the same time constraint reason, the test coverage is limited.
     - [Running Services Using Gradle](#running-services-using-gradle)
     - [Running Using Kubernetes](#running-using-kubernetes)
 - [Development Database](#development-database)
-- [Postman Collection](#postman-collection)
-- [Live deployment](#live-deployment)
+- [Building the Docker Images](#building-the-docker-images)
 
 ## Live Demo & API Testing
 A live demo of the deployed services is available at: https://assignment.orthae.xyz/ running inside a Kubernetes with nginx ingress controller.
@@ -104,4 +103,12 @@ To run the database container:
 
 ```shell
 docker run --name development-database -p 5432:5432 -e POSTGRES_PASSWORD=root -d orthae/dev-db
+```
+
+### Building the Docker Images
+You can build the Docker images for the services using the provided `docker-compose.yml`.
+To build the images, run:
+
+```shell
+docker-compose build`
 ```
